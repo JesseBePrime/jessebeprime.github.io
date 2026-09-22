@@ -55,6 +55,15 @@ Then open http://localhost:8000 in a browser. Opening index.html directly may no
 - If an image filename changes, update the matching src path in the HTML.
 - Shared colors, spacing, and responsive behavior are defined in assets/css/styles.css.
 
+### Replacing the CVT diagrams
+
+The CVT page expects the corrected diagrams at these exact, case-sensitive paths:
+
+- assets/images/cvt/mechatronics-architecture.webp
+- assets/images/cvt/ratio-control-loop.webp
+
+Replace the existing files at those paths rather than adding differently named images. If the corrected images are PNG or JPG files, export them as WebP or update both matching `src` values in `projects/cvt.html`. The image URLs include a version query so browsers request the new files after deployment.
+
 ## Review before public release
 
 - Confirm that the lab permits publication of unpublished research details and CAD images.
