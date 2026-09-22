@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Design and validation of Jesse Prime's actively controlled V-belt continuously variable transmission for wearable robotic actuators.">
+    <meta property="og:title" content="Actively Controlled V-Belt CVT | Jesse Prime">
+    <meta property="og:description" content="Graduate research in variable-transmission robotic actuation, mechatronics, and experimental validation.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://jessebeprime.github.io/assets/images/cvt/system-cad.webp">
+    <title>Actively Controlled V-Belt CVT | Jesse Prime</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">Jesse Prime</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a aria-current="page" href="/#work">Work</a>
+          <a class="nav-about" href="/#about">About</a>
+          <a href="mailto:jesse.b.prime@gmail.com">Email</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <article>
+        <header class="container project-hero">
+          <a class="back-link" href="/#work">All projects</a>
+          <p class="eyebrow">Graduate research</p>
+          <h1>Actively controlled V-belt CVT for wearable robotics</h1>
+          <p class="lead">
+            A compact robotic transmission that changes ratio during operation and adds integrated braking and clutching modes for a wider range of actuator behavior.
+          </p>
+          <dl class="project-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Mechanical and mechatronic system design</dd>
+            </div>
+            <div>
+              <dt>Context</dt>
+              <dd>M.S. research, HGN Lab for Bionic Engineering</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>MATLAB, SolidWorks, Fusion, C, Simulink, LabVIEW</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="container project-cover">
+          <img src="/assets/images/cvt/system-cad.webp" alt="CAD side view of the variable-transmission robotic actuator">
+        </div>
+
+        <div class="container">
+          <section class="case-section" aria-labelledby="cvt-challenge">
+            <div class="case-section-label">Challenge</div>
+            <div class="case-content">
+              <h2 id="cvt-challenge">One actuator must operate across changing torque and motion demands</h2>
+              <p>
+                Wearable and humanoid robots encounter tasks that place different demands on actuator torque, speed, and output impedance. A fixed transmission forces the drive system to operate around a single mechanical compromise.
+              </p>
+              <p>
+                My research adapts the V-belt continuously variable transmission used in larger machines to the scale and packaging constraints of a robotic joint. The transmission changes ratio by varying the effective diameter of its pulleys.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="cvt-mechanism">
+            <div class="case-section-label">Mechanical design</div>
+            <div class="case-content">
+              <h2 id="cvt-mechanism">Variable ratio, clutching, and static holding in one mechanism</h2>
+              <p>
+                A dedicated actuation motor changes the pulley geometry to shift the transmission ratio. At one end of travel, the mechanism releases belt compression so the output can move with low impedance. At the other end, a friction element engages the pulley to hold the output without continuous motor torque.
+              </p>
+              <ul>
+                <li>Miniaturized V-belt pulleys for a robotic actuator envelope</li>
+                <li>Motor-driven ratio adjustment through a compact linear mechanism</li>
+                <li>Integrated clutch mode for low-impedance output motion</li>
+                <li>Integrated brake mode for static position holding</li>
+              </ul>
+
+              <div class="media-grid">
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/mechanism-cad.webp" alt="CAD view of the compact V-belt pulley mechanism" loading="lazy">
+                  </div>
+                  <figcaption>Compact pulley and shifting mechanism</figcaption>
+                </figure>
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/brake-cad.webp" alt="CAD view of the CVT friction brake mechanism" loading="lazy">
+                  </div>
+                  <figcaption>Friction brake used to lock the transmission output</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="cvt-controls">
+            <div class="case-section-label">Mechatronics and control</div>
+            <div class="case-content">
+              <h2 id="cvt-controls">Sensing and control connect commanded ratio to pulley position</h2>
+              <p>
+                The test platform combines motor drivers, encoders, Hall sensors, linear potentiometers, PIC32 microcontrollers, a Raspberry Pi, and a LabVIEW interface. A closed-loop controller commands the CVT position while feedback tracks motor velocity and the linear position of the shifting mechanism.
+              </p>
+
+              <div class="media-grid single">
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/mechatronics-architecture.webp" alt="Block diagram of the CVT actuator electronics and communication architecture" loading="lazy">
+                  </div>
+                  <figcaption>System-level sensing, actuation, power, and communication architecture</figcaption>
+                </figure>
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/ratio-control-loop.webp" alt="Closed-loop CVT position controller using Hall sensors and a linear potentiometer" loading="lazy">
+                  </div>
+                  <figcaption>Closed-loop position and velocity control for ratio changes</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="cvt-prototype">
+            <div class="case-section-label">Prototype integration</div>
+            <div class="case-content">
+              <h2 id="cvt-prototype">The completed platform supports mechanism and actuator-level testing</h2>
+              <p>
+                I carried the system from transmission modeling and CAD through manufacturing, sensor integration, embedded control, and benchtop testing. The resulting platform combines the variable transmission with the actuator hardware and control electronics needed to study its behavior under controlled conditions.
+              </p>
+              <div class="media-grid">
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/prototype.webp" alt="Assembled CVT robotic actuator prototype on a benchtop" loading="lazy">
+                  </div>
+                  <figcaption>Integrated variable-transmission actuator test platform</figcaption>
+                </figure>
+                <figure class="figure">
+                  <div class="figure-frame">
+                    <img src="/assets/images/cvt/electronics-enclosure.webp" alt="Open electronics enclosure with motor drives, control boards, and wiring" loading="lazy">
+                  </div>
+                  <figcaption>Custom control and data-acquisition electronics</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="cvt-validation">
+            <div class="case-section-label">Experimental validation</div>
+            <div class="case-content">
+              <h2 id="cvt-validation">Testing separates transmission capability from actuator response</h2>
+              <p>
+                The experimental program evaluates the transmission across its operating configurations and characterizes how quickly it can move between commanded ratios.
+              </p>
+              <div class="validation-list">
+                <div class="validation-item">
+                  <strong>Transmission ratio</strong>
+                  <span>Measured the available torque-ratio range across pulley positions.</span>
+                </div>
+                <div class="validation-item">
+                  <strong>Brake behavior</strong>
+                  <span>Verified that the integrated brake can lock the actuator output.</span>
+                </div>
+                <div class="validation-item">
+                  <strong>Output impedance</strong>
+                  <span>Compared high-ratio, low-ratio, and clutched operating configurations.</span>
+                </div>
+                <div class="validation-item">
+                  <strong>Ratio-change response</strong>
+                  <span>Characterized rise time as a function of command size and belt velocity.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <a class="next-project" href="/projects/ankle-exoskeleton.html">
+            <div>
+              <p>Next project</p>
+              <strong>Ankle exoskeleton drivetrain redesign</strong>
+            </div>
+            <span>View project</span>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Jesse Prime</p>
+        <p><a href="mailto:jesse.b.prime@gmail.com">jesse.b.prime@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
